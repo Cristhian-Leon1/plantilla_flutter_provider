@@ -24,7 +24,6 @@ class ThemeChanger with ChangeNotifier {
 
   Future<void> _loadTheme() async {
     final prefs = await SharedPreferences.getInstance();
-    print(prefs.getBool('isDark'));
     final isDark = prefs.getBool('isDark') ?? false;
     _themeData = isDark ? ThemeData.dark() : ThemeData.light();
     notifyListeners();
